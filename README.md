@@ -13,4 +13,7 @@ This project explores and analyzes a dataset of video game sales using Python. I
 # Features of Analysis
 1. Year wise global analysis
 2. Most popular genres by region
-3. Top publishers and platfo
+3. Top publishers and platforms
+4. Distribution of global sales
+5. Pie-charts and bar graphs for region-wise comparison
+6. No missing values were removed – handled properly using fill and placeholders
