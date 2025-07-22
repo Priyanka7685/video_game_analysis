@@ -16,4 +16,4 @@ This project explores and analyzes a dataset of video game sales using Python. I
 3. Top publishers and platforms
 4. Distribution of global sales
 5. Pie-charts and bar graphs for region-wise comparison
-6. No missing values were removed – handled properly using fill and placeholders
+6. Missing values handled properly
