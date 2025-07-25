@@ -14,7 +14,6 @@ st.set_page_config(page_title="Video Games Sales Dashboard", layout="wide")
 def load_data():
     df = pd.read_csv("vgsales.csv")
 
-
     # Data Preprocessing
     df.fillna({"Year":df["Year"].mean()}, inplace=True)
     df.fillna({"Publisher":df["Publisher"].mode()[0]}, inplace=True)
@@ -22,6 +21,17 @@ def load_data():
     return df
 
 df = load_data()
+
+search_game = st.sidebar.text_input("Search by Game Name")
+if search_game:
+    df = df[df['Name'].str.contains(search_game, case=False, na=False)]
+
+
+# Displaying title
+st.title("VIDEO GAMES ANALYSIS DASHBOARD")
+st.subheader("Raw data preview")
+st.dataframe(df.head(10))
+
 
 # Displaying total games, top publishers and total global sales
 col1, col2, col3 = st.columns(3)
@@ -34,18 +44,6 @@ with col2:
 
 with col3:
     st.metric("Total Global Sales", f"{df['Global_Sales'].sum():.2f} M")    
-
-
-
-search_game = st.sidebar.text_input("Search by Game Name")
-if search_game:
-    df = df[df['Name'].str.contains(search_game, case=False, na=False)]
-
-
-# Displaying title
-st.title("Video Games Analysis Dashboard")
-st.subheader("Raw data preview")
-st.dataframe(df.head(10))
 
 # Sidebar filters
 if not search_game:
