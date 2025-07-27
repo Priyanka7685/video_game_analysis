@@ -6,57 +6,27 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-# Setting streamlit page config
-st.set_page_config(page_title="Video Games Sales Dashboard", layout="wide")
 
-
-# Loading the data
-def load_data():
-    df = pd.read_csv("vgsales.csv")
+df = pd.read_csv("vgsales.csv")
 
     # Data Preprocessing
-    df.fillna({"Year":df["Year"].mean()}, inplace=True)
-    df.fillna({"Publisher":df["Publisher"].mode()[0]}, inplace=True)
-    df['Year'] = df['Year'].astype('int64') 
-    return df
+df.fillna({"Year":df["Year"].mean()}, inplace=True)
+df.fillna({"Publisher":df["Publisher"].mode()[0]}, inplace=True)
+df['Year'] = df['Year'].astype('int64') 
 
-df = load_data()
 
 search_game = st.sidebar.text_input("Search by Game Name")
 if search_game:
     df = df[df['Name'].str.contains(search_game, case=False, na=False)]
 
 
-# Displaying title
-st.title("VIDEO GAMES ANALYSIS DASHBOARD")
-st.subheader("Raw data preview")
-st.dataframe(df.head(10))
-
-
-# Displaying total games, top publishers and total global sales
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.metric("Total Games: ", len(df))
-
-with col2:
-    st.metric("Top Publisher: ", df.groupby('Publisher')['Global_Sales'].sum().idxmax())
-
-with col3:
-    st.metric("Total Global Sales", f"{df['Global_Sales'].sum():.2f} M")    
-
 # Sidebar filters
 if not search_game:
-    st.sidebar.header("Filter options")
+    st.sidebar.header("Filter option")
     genre_filter = st.sidebar.multiselect("Select genre", df['Genre'].unique())
-    platform_filter = st.sidebar.multiselect("Select platform", df["Platform"].unique())
 
     if genre_filter:
         df = df[df['Genre'].isin(genre_filter)]
-
-    if platform_filter:
-        df = df[df['Platform'].isin(platform_filter)]
-
 
 
 # Graphs
@@ -92,7 +62,7 @@ st.plotly_chart(fig, use_container_width=True)
 st.subheader("Games releases over the years")
 games_per_year = df['Year'].value_counts().sort_index()
 
-fig, ax = plt.subplots(figsize=(12, 5))
+fig, ax = plt.subplots(figsize=(12, 3))
 sns.lineplot(x=games_per_year.index, y=games_per_year.values, marker='o', color='crimson', ax = ax)
 ax.set_title("Number of Games Released Per Year")
 ax.set_xlabel("Year")
