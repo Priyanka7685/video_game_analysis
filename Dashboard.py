@@ -8,11 +8,10 @@ st.markdown("""
     <style>
         /* Background */
         .stApp {
-            color: white;
             font-family: 'Segoe UI', sans-serif;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h5, h6 {
             color: #ffcc70;
         }
 
@@ -22,6 +21,7 @@ st.markdown("""
             border-radius: 15px;
             margin-bottom: 25px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            
         }
 
         ul {
@@ -34,6 +34,9 @@ st.markdown("""
             font-size: 58px;
             text-align: center;
             margin-bottom: 10px;
+            color: orange;
+            font-weight: 700;
+            
         }
 
         .description {
@@ -46,7 +49,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Emoji & Title
-st.markdown("<div class='title-text'>Video Games Analysis Dashboard</div>", unsafe_allow_html=True)
+st.markdown("<div class='title-text'>🎮Video Games Analysis Dashboard</div>", unsafe_allow_html=True)
 st.markdown("<p class='description'>Explore sales trends, top genres, and publisher performance</p>", unsafe_allow_html=True)
 
 # Info block

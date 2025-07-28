@@ -19,7 +19,7 @@ st.markdown("""
         .title-text {
             font-size: 38px;
             font-weight: 700;
-
+            
         }
         .section-title {
             font-size: 24px;
