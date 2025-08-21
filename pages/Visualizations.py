@@ -29,6 +29,14 @@ if not search_game:
         df = df[df['Genre'].isin(genre_filter)]
 
 
+st.subheader("📊 Quick Stats")
+col1, col2, col3, col4 = st.columns(4)
+col1.metric("Total Games", df['Name'].nunique())
+col2.metric("Total Sales (M)", round(df['Global_Sales'].sum(), 2))
+col3.metric("Best Game", df.loc[df['Global_Sales'].idxmax(), 'Name'])
+col4.metric("Top Publisher", df.groupby('Publisher')['Global_Sales'].sum().idxmax())
+
+
 # Graphs
 
 # 1. Global Sales Distribution  
