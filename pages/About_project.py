@@ -10,7 +10,7 @@ st.markdown("""
             background-color: #f0f2f6;
         }
         .card {
-             background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.05);
             box-shadow: 0 8px 16px rgba(0,0,0,0.15);
             padding: 25px;
             border-radius: 15px;
@@ -19,7 +19,6 @@ st.markdown("""
         .title-text {
             font-size: 38px;
             font-weight: 700;
-            
         }
         .section-title {
             font-size: 24px;
@@ -40,8 +39,9 @@ st.markdown("""
 <div class='card'>
     <div class='section-title'>🎯 Objective</div>
     <p>
-        The objective of this project is to analyze the <strong>Video Game Sales</strong> dataset to uncover trends, patterns, and insights across different regions, platforms, and genres.
-        This analysis helps in understanding what drives game sales and how different factors like publisher, release year, and genre affect the overall market performance.
+        The objective of this project is to analyze the <strong>Video Game Trend Tracker</strong> dataset to uncover trends, patterns, and insights across different regions, platforms, and genres.
+        Additionally, the project leverages <strong>Machine Learning</strong> to predict future sales and identify potential high-performing games. 
+        These insights help developers, publishers, and investors make informed business decisions.
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -50,7 +50,7 @@ st.markdown("""
 st.markdown("""
 <div class='card'>
     <div class='section-title'>📂 Dataset Information</div>
-    <p>The dataset contains information on video game sales across different regions and platforms, with the following columns:</p>
+    <p>The dataset contains information on video game sales across regions and platforms, with the following columns:</p>
     <ul>
         <li><strong>Name</strong>: Name of the game</li>
         <li><strong>Platform</strong>: Platform on which the game was released</li>
@@ -69,13 +69,15 @@ st.markdown("""
 # Insights
 st.markdown("""
 <div class='card'>
-    <div class='section-title'>📈 Insights</div>
-    <p>This project is helpful for the following:</p>
+    <div class='section-title'>📈 Insights & Business Value</div>
+    <p>This project provides value in several ways:</p>
     <ul>
-        <li>Understanding the market dynamics of video games across regions and platforms</li>
-        <li>Identifying the most popular genres and platforms</li>
-        <li>Analyzing the impact of publisher, release year, and genre on sales</li>
-        <li>Providing insights for game developers and publishers to improve marketing strategies</li>
+        <li>Understanding market dynamics of video games across regions and platforms</li>
+        <li>Identifying the most popular genres, platforms, and publishers</li>
+        <li>Analyzing the impact of release year, genre, and publisher on sales</li>
+        <li>Providing <strong>ML-based predictions</strong> for future game performance</li>
+        <li>Deriving actionable <strong>business insights</strong> like potential profit, risk, and market opportunities</li>
+        <li>Helping game developers and publishers optimize strategies and marketing decisions</li>
     </ul>
 </div>
 """, unsafe_allow_html=True)

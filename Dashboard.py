@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Page config
-st.set_page_config(page_title=" Video Games Dashboard", layout="wide")
+st.set_page_config(page_title="Video Games Dashboard", layout="wide")
 
 # Custom CSS styling
 st.markdown("""
@@ -21,7 +21,6 @@ st.markdown("""
             border-radius: 15px;
             margin-bottom: 25px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            
         }
 
         ul {
@@ -29,14 +28,12 @@ st.markdown("""
             color: #ffffffcc;
         }
 
-
         .title-text {
             font-size: 58px;
             text-align: center;
             margin-bottom: 10px;
             color: orange;
             font-weight: 700;
-            
         }
 
         .description {
@@ -49,14 +46,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Emoji & Title
-st.markdown("<div class='title-text'>🎮Video Games Trend Tracker Dashboard</div>", unsafe_allow_html=True)
-st.markdown("<p class='description'>Explore sales trends, top genres, and publisher performance</p>", unsafe_allow_html=True)
+st.markdown("<div class='title-text'>🎮 Video Games Trend & Insights Dashboard</div>", unsafe_allow_html=True)
+st.markdown("<p class='description'>Explore sales trends, top genres, publisher performance, ML predictions, and business insights</p>", unsafe_allow_html=True)
 
 # Info block
 st.markdown("""
 <div class='block'>
     <h4>👋 Welcome</h4>
-    <p>This dashboard presents an interactive track of video game sales across regions and platforms.</p>
+    <p>This dashboard presents an interactive track of video game sales across regions and platforms. 
+    It also provides machine learning predictions for future game performance and actionable business insights.</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -65,9 +63,11 @@ st.markdown("""
 <div class='block'>
     <h4>🔍 What You Can Explore</h4>
     <ul>
-        <li><b>📘 Project Overview</b>: Objective, Dataset Information and Conclusion </li>
+        <li><b>📘 Project Overview</b>: Objective, Dataset Information, and Conclusion</li>
         <li><b>📈 Exploratory Data Analysis</b>: Summary stats and data structure</li>
         <li><b>📊 Visualizations</b>: Interactive charts and graphs</li>
-    </ul>
+        <li><b>🤖 ML Predictions</b>: Forecasting future game performance and sales trends</li>
+        
+    
 </div>
 """, unsafe_allow_html=True)
