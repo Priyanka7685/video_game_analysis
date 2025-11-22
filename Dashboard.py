@@ -46,7 +46,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Emoji & Title
-st.markdown("<div class='title-text'>🎮 Video Games Trend & Insights Dashboard</div>", unsafe_allow_html=True)
+st.markdown("<div class='title-text'>🎮 Video Games Trend Tracker Dashboard</div>", unsafe_allow_html=True)
 st.markdown("<p class='description'>Explore sales trends, top genres, publisher performance, ML predictions, and business insights</p>", unsafe_allow_html=True)
 
 # Info block
