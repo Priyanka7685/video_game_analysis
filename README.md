@@ -1,4 +1,4 @@
-# video_game_analysis
+# video_games_trend_tracker
 This project explores and analyzes a dataset of video game sales using Python. It provides insights into global and regional sales trends, popular genres, top-performing publishers, and platform-wise sales. This project also includes ML algorithm that helps to predict the probability of success or flop of a game and also helpful to predict the revenue of that game. The analysis is done using Pandas, NumPy, Matplotlib, Seaborn, and Plotly.
 
 # Tools and Libraries Used
