@@ -17,7 +17,7 @@ st.title("🎮 Future Sales & Profit Prediction")
 
 # ---------- Sidebar Filters ----------
 st.sidebar.header("Filters")
-year_range = st.sidebar.slider("Select Year Range", 2000, 2022, (2000, 2022))
+year_range = st.sidebar.slider("Select Year Range", 2000, 2020, (2000, 2020))
 platforms = st.sidebar.multiselect("Platform", df['Platform'].unique(), default=df['Platform'].unique())
 genres = st.sidebar.multiselect("Genre", df['Genre'].unique(), default=df['Genre'].unique())
 
@@ -28,6 +28,11 @@ filtered_df = df[
     (df['Platform'].isin(platforms)) &
     (df['Genre'].isin(genres))
 ].copy()
+
+# If no data remains after filtering
+if filtered_df.empty:
+    st.error("⚠️ No data found for selected filters. Try changing the filters.")
+    st.stop()
 
 # ---------- Tabs ----------
 tabs = st.tabs(["🏆 Leaderboard", "📊 Metrics & Trends", "🌎 Regional Sales", "🔮 Future Sales & Profit Prediction"])
